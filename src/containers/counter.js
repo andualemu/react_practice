@@ -11,7 +11,7 @@ const Counter = (props) => {
   );
 };
 
-// connects particular parts of redux state to this components props
+// connects particular parts of redux state to this component's props
 const mapStateToProps = state => (
   {
     count: state.count,
