@@ -17,22 +17,23 @@ module.exports = {
         test: /\.js$/,
         exclude: /node_modules/,
         use: [
+
           { loader: 'babel-loader' },
-          { loader: 'eslint-loader' }
+          { loader: 'eslint-loader' },
         ],
       },
-	{
-  test: /\.(jpe?g|png|gif|svg)$/,
-  use: [
-    {
-      loader: 'file-loader',
-      options: {
-        useRelativePath: true,
-        name: '[name].[ext]',
+      {
+        test: /\.(jpe?g|png|gif|svg)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              useRelativePath: true,
+              name: '[name].[ext]',
+            },
+          },
+        ],
       },
-    },
-  ],
-},
       {
         test: /\.s?css/,
         use: [
@@ -43,13 +44,13 @@ module.exports = {
               sourceMap: true,
             },
           },
-	{
-  loader: 'postcss-loader',
-  options: {
-    plugins: () => [autoprefixer()],
-    sourceMap: true,
-  },
-},
+          {
+            loader: 'postcss-loader',
+            options: {
+              plugins: () => [autoprefixer()],
+              sourceMap: true,
+            },
+          },
           {
             loader: 'sass-loader',
             options: {
